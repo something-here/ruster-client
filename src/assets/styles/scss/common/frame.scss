@@ -339,7 +339,6 @@ body {
 
 .back-to-top {
   position: fixed;
-  display: none;
   right: 0;
   top: 60%;
   width: 2.8rem;
@@ -401,13 +400,14 @@ body {
     }
 
     .v-note-wrapper {
+      z-index: 80;
 
       .v-note-op{
-        border-color: $bd-color !important;
+        border-color: $lighter-bd-color !important;
       }
 
       .v-note-panel{
-        border-color: $bd-color !important;
+        border-color: $lighter-bd-color !important;
       }
 
       .auto-textarea-input {
@@ -607,29 +607,43 @@ body {
   }
 }
 
+
 .user-info-wrapper {
-  padding: 1rem;
+  background: #fff;
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  &:before{
+    content: '';
+    display: block;
+    height: 10rem;
+    background: $lightest-font-color;
+    z-index: 0;
+  }
 
   .user-info {
+    padding: 2rem 2rem 1rem;
     font-size: 1.4rem;
     color: $font-color;
 
     .avatar {
       display: inline-block;
-      width: 10rem;
-      height: 10rem;
+      width: 14rem;
+      height: 14rem;
       float: left;
+      position: relative;
+      top: -7rem;
 
       img {
         vertical-align: top;
-        width: 10rem;
-        height: 10rem;
+        width: 14rem;
+        height: 14rem;
         @include borderRadius(.8rem);
       }
     }
 
     ul {
-      padding-left: 11rem;
+      padding-left: 16rem;
     }
 
     li {
